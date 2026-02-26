@@ -34,25 +34,3 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
-```
-
-4. Click **"Commit changes"**
-
----
-
-## Step 4 — Enable GitHub Pages
-
-1. Go to your repo → **Settings** tab
-2. Left sidebar → **Pages**
-3. Under **Source**, select **GitHub Actions**
-4. Click **Save**
-
----
-
-## Step 5 — Watch it deploy
-
-1. Click the **Actions** tab in your repo
-2. You'll see a workflow running — takes about 60 seconds
-3. Once it shows a ✅ green checkmark, your site is live at:
-```
-   https://mrigank202531-creator.github.io/studyflow/
