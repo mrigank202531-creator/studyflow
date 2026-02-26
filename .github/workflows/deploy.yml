@@ -34,22 +34,3 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
-```
-
-5. Click **"Commit changes"** → **"Commit changes"** again
-
----
-
-### Step 2 — Watch it build
-
-1. Click the **Actions** tab
-2. You'll see a workflow running with a **yellow/orange spinning circle** ⏳
-3. Wait ~60 seconds until it turns **green ✅**
-
----
-
-### Step 3 — Open your site
-
-Once green, your site is live at:
-```
-https://mrigank202531-creator.github.io/studyflow/
