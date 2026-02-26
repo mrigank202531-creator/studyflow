@@ -1,0 +1,55 @@
+name: Deploy StudyFlow to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install
+      - run: npm run build
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+5. Click **"Commit changes"** → **"Commit changes"** again
+
+---
+
+### Step 2 — Watch it build
+
+1. Click the **Actions** tab
+2. You'll see a workflow running with a **yellow/orange spinning circle** ⏳
+3. Wait ~60 seconds until it turns **green ✅**
+
+---
+
+### Step 3 — Open your site
+
+Once green, your site is live at:
+```
+https://mrigank202531-creator.github.io/studyflow/
